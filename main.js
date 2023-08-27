@@ -1,24 +1,68 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import { Scene, Game, WEBGL, GameObjects} from 'phaser'; 
+import Scene1 from "./Scene1" //start scene with name input
+// import Scene2 from "./Scene2" //level one game play
+// import Scene3 from "./Scene3" //game over scene
+// import Scene4 from "./Scene4" //level2 play again scene
+// import Scene5 from "./Scene5" //You win scene 
+import SceneHelp from "./SceneHelp" //Help Scene
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const canvas = document.getElementById('game');
 
-setupCounter(document.querySelector('#counter'))
+class GameScene extends Scene {
+
+  constructor() {
+    super('GameScene');
+  }
+
+  preload(){
+    //preload here 
+    //
+  }
+
+  create() {
+    this.textbox = this.add.text(
+      window.innerWidth/2,
+      window.innerHeight/2,
+      'Welcome to Infection!',
+      {
+        color: 'white',
+        fontFamily: 'monospace',
+        fontSize: '26px'
+      }
+    );
+    
+    this.textbox.setOrigin(0.5, 0.5);
+
+  }
+}
+
+const config = {
+  type: WEBGL,
+  width: window.innerWidth,
+  height: window.innerHeight,
+  canvas,
+  backgroundColor: '#6B1518',
+  pixelArt: true,
+  fps: {
+      target: 60,
+      forceSetTimeOut: true
+  },
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 0 },
+      // debug: true
+    }
+  },
+  // dom: {
+  //   createContainer: true
+  // },
+  scene: [
+    Scene1, SceneHelp //, Scene2, Scene3, Scene4, Scene5 
+  ]
+}
+
+let game = new Game(config);
+
+export default GameScene
