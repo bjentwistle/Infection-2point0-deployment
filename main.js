@@ -1,8 +1,8 @@
 import './style.css'
 import { Scene, Game, WEBGL, GameObjects} from 'phaser'; 
 import Scene1 from "./Scene1" //start scene with name input
-// import Scene2 from "./Scene2" //level one game play
-// import Scene3 from "./Scene3" //game over scene
+import Scene2 from "./Scene2" //level one game play
+import Scene3 from "./Scene3" //game over scene
 // import Scene4 from "./Scene4" //level2 play again scene
 // import Scene5 from "./Scene5" //You win scene 
 import SceneHelp from "./SceneHelp" //Help Scene
@@ -59,7 +59,7 @@ const config = {
   //   createContainer: true
   // },
   scene: [
-    Scene1, SceneHelp //, Scene2, Scene3, Scene4, Scene5 
+    Scene1, SceneHelp , Scene2, Scene3//, Scene4, Scene5 
   ]
 }
 
