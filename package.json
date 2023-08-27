@@ -12,6 +12,8 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "phaser": "^3.60.0"
+    "phaser": "^3.60.0",
+    "phaser3": "^0.4.34",
+    "webfontloader": "^1.6.28"
   }
 }
