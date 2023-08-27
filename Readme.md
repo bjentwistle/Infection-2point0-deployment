@@ -2,7 +2,7 @@
 
 # INFECTION
 
-![Play here](https://infection-2point0-deployment.vercel.app/)
+[Play here](https://infection-2point0-deployment.vercel.app/)
 
 ![](https://github.com/bjentwistle/Capstone_project_July23/blob/main/client/public/assets/images/Biohazard.png)
 
